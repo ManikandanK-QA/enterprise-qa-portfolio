@@ -131,8 +131,22 @@ below were regenerated with default latency afterwards.
 
 ![Combined k6 report index generated from the three executed profiles](docs/sample-report.png)
 
-CI evidence is added after the first workflow run; no CI result is claimed before
-it happens.
+## Verified in CI
+
+| Check                                                   | Result                                            |
+| ------------------------------------------------------- | ------------------------------------------------- |
+| Quality gate                                            | passed                                            |
+| Pinned k6 2.4.0 install and version guard on every job   | passed                                            |
+| `smoke`                                                 | 102/102 checks, 39 requests, 6/6 thresholds       |
+| `load`                                                  | 5,094/5,094 checks, 2,062 requests, 8/8 thresholds |
+| `stress`                                                | 8,040/8,040 checks, 3,216 requests, 9/9 thresholds |
+| Combined site and `gh-pages` publication                | passed                                            |
+
+[Live report](https://manikandank-qa.github.io/enterprise-qa-portfolio/) ·
+[CI run 45883366313](https://github.com/ManikandanK-QA/enterprise-qa-portfolio/actions/runs/45883366313)
+
+The screenshot above was captured from the published Pages site. Each profile's
+HTML report, summary JSON and raw k6 samples are also available from that site.
 
 ## Why this is original
 
