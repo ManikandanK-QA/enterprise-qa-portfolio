@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OpsBoard — local performance target</title>
+    <link rel="stylesheet" href="/assets/app.css" />
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/">OpsBoard</a>
+      <span class="environment" data-test="environment">local-lab</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Deterministic load target</p>
+        <h1>Service health at a glance</h1>
+        <p class="lede">
+          This page, its assets and the project API are served from this repository so
+          k6 results never depend on a third-party demo site.
+        </p>
+      </section>
+
+      <section class="kpis" aria-label="Service indicators">
+        <article class="kpi">
+          <span class="kpi-label">Monitored services</span>
+          <strong class="kpi-value" data-test="kpi-services">6</strong>
+        </article>
+        <article class="kpi">
+          <span class="kpi-label">Healthy</span>
+          <strong class="kpi-value" data-test="kpi-healthy">4</strong>
+        </article>
+        <article class="kpi">
+          <span class="kpi-label">Environment</span>
+          <strong class="kpi-value" data-test="kpi-environment">stable</strong>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Projects</h2>
+          <span class="badge" data-test="project-count">6 records</span>
+        </div>
+        <ul class="projects" data-test="project-list" aria-live="polite">
+          <li class="loading">Loading deterministic project data…</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
