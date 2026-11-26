@@ -1,0 +1,80 @@
+{
+  "profile": "smoke",
+  "generatedAt": "2026-11-26T19:24:19.959Z",
+  "baseUrl": "http://127.0.0.1:8085",
+  "metrics": {
+    "checks": {
+      "rate": 1,
+      "passes": 102,
+      "fails": 0
+    },
+    "checks_emitted": {
+      "rate": 39.24316439555291,
+      "count": 102
+    },
+    "http_req_failed": {
+      "rate": 0.07692307692307693,
+      "passes": 3,
+      "fails": 36
+    },
+    "http_req_failed{expected:false}": {
+      "rate": 0,
+      "passes": 0,
+      "fails": 36
+    },
+    "http_reqs": {
+      "rate": 15.004739327711407,
+      "count": 39
+    },
+    "http_req_duration": {
+      "avg": 4.605326076923078,
+      "min": 0.184733,
+      "med": 5.724735,
+      "max": 9.169281,
+      "p(90)": 8.583688800000001,
+      "p(95)": 8.7123175,
+      "p(99)": 9.007404799999998
+    },
+    "iteration_duration": {
+      "avg": 216.5474045,
+      "min": 215.151792,
+      "med": 216.278908,
+      "max": 220.138449,
+      "p(90)": 217.1253334,
+      "p(95)": 218.5099309,
+      "p(99)": 219.81274538
+    }
+  },
+  "thresholds": [
+    {
+      "metric": "http_req_failed{expected:false}",
+      "expression": "rate==0",
+      "passed": true
+    },
+    {
+      "metric": "http_reqs",
+      "expression": "count>0",
+      "passed": true
+    },
+    {
+      "metric": "http_req_duration{kind:page}",
+      "expression": "p(95)<400",
+      "passed": true
+    },
+    {
+      "metric": "http_req_duration{kind:api}",
+      "expression": "p(95)<400",
+      "passed": true
+    },
+    {
+      "metric": "checks_emitted",
+      "expression": "count>0",
+      "passed": true
+    },
+    {
+      "metric": "checks",
+      "expression": "rate==1",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>k6 report — stress</title>
+<style>
+:root { color-scheme: dark; font-family: system-ui, sans-serif; --border: #28364d; --muted: #9aa9c0; }
+body { margin: 0; background: #0b1120; color: #e8eef8; }
+main { width: min(1000px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 80px; }
+h1 { font-size: 40px; margin: 0 0 8px; letter-spacing: -0.03em; }
+p.meta { color: var(--muted); margin-top: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 28px 0; }
+.card { border: 1px solid var(--border); border-radius: 14px; padding: 18px; background: #111a2c; }
+.card span { display: block; color: var(--muted); font-size: 13px; }
+.card strong { display: block; margin-top: 6px; font-size: 28px; }
+section { margin-top: 34px; }
+table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+th { background: #111a2c; }
+tr:last-child td, tr:last-child th { border-bottom: 0; }
+.pass { color: #6ee7b7; font-weight: 700; }
+.fail { color: #fca5a5; font-weight: 700; }
+code { color: #7dd3fc; }
+</style>
+</head>
+<body>
+<main>
+<h1>k6 stress profile</h1>
+<p class="meta">Generated from the executed k6 summary at 2026-11-26T19:24:36.917Z · target http://127.0.0.1:8085</p>
+<div class="cards">
+  <div class="card"><span>Checks pass rate</span><strong>100.00%</strong></div>
+  <div class="card"><span>Unexpected failure rate</span><strong>0.00%</strong></div>
+  <div class="card"><span>Requests</span><strong>3216</strong></div>
+  <div class="card"><span>Thresholds passed</span><strong>9/9</strong></div>
+</div>
+<section><h2>Thresholds</h2><table>
+        <thead><tr><th>Metric</th><th>Threshold</th><th>Result</th></tr></thead>
+        <tbody><tr><td>checks</td><td>rate==1</td><td class="pass">PASS</td></tr><tr><td>http_req_duration{kind:page}</td><td>p(95)&lt;900</td><td class="pass">PASS</td></tr><tr><td>http_req_duration{kind:page}</td><td>p(99)&lt;1500</td><td class="pass">PASS</td></tr><tr><td>http_req_duration{kind:api}</td><td>p(95)&lt;900</td><td class="pass">PASS</td></tr><tr><td>iteration_duration</td><td>p(95)&lt;3500</td><td class="pass">PASS</td></tr><tr><td>http_req_failed{expected:false}</td><td>rate&lt;0.02</td><td class="pass">PASS</td></tr><tr><td>checks_emitted</td><td>count&gt;0</td><td class="pass">PASS</td></tr><tr><td>http_reqs</td><td>count&gt;0</td><td class="pass">PASS</td></tr><tr><td>http_req_duration{kind:slow}</td><td>p(95)&lt;1000</td><td class="pass">PASS</td></tr></tbody>
+      </table></section>
+<section><h2>Metrics</h2><table><tbody><tr><th scope="row">checks</th><td colspan="2"><td>rate</td><td>1</td></tr><tr><td>passes</td><td>8040</td></tr><tr><td>fails</td><td>0</td></td></tr><tr><th scope="row">checks_emitted</th><td colspan="2"><td>rate</td><td>399.84981181539325</td></tr><tr><td>count</td><td>8040</td></td></tr><tr><th scope="row">http_req_failed</th><td colspan="2"><td>rate</td><td>0</td></tr><tr><td>passes</td><td>0</td></tr><tr><td>fails</td><td>3216</td></td></tr><tr><th scope="row">http_req_failed{expected:false}</th><td colspan="2"><td>rate</td><td>0</td></tr><tr><td>passes</td><td>0</td></tr><tr><td>fails</td><td>3216</td></td></tr><tr><th scope="row">http_reqs</th><td colspan="2"><td>rate</td><td>159.9399247261573</td></tr><tr><td>count</td><td>3216</td></td></tr><tr><th scope="row">http_req_duration</th><td colspan="2"><td>avg</td><td>9.87632324315919</td></tr><tr><td>min</td><td>0.20479</td></tr><tr><td>med</td><td>6.624988500000001</td></tr><tr><td>max</td><td>27.663557</td></tr><tr><td>p(90)</td><td>25.51333</td></tr><tr><td>p(95)</td><td>25.79556375</td></tr><tr><td>p(99)</td><td>26.225327749999998</td></td></tr><tr><th scope="row">iteration_duration</th><td colspan="2"><td>avg</td><td>340.5434411467665</td></tr><tr><td>min</td><td>337.726</td></tr><tr><td>med</td><td>340.5689885</td></tr><tr><td>max</td><td>344.643804</td></tr><tr><td>p(90)</td><td>341.5368983</td></tr><tr><td>p(95)</td><td>341.7705872</td></tr><tr><td>p(99)</td><td>342.63601128</td></td></tr></tbody></table></section>
+<section><h2>Artifacts</h2><p>Raw samples: <code>reports/stress-raw.json</code></p><p>Machine-readable summary: <code>reports/stress-summary.json</code></p></section>
+</main>
+</body>
+</html>

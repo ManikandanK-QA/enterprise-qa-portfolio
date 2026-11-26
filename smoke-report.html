@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>k6 report — smoke</title>
+<style>
+:root { color-scheme: dark; font-family: system-ui, sans-serif; --border: #28364d; --muted: #9aa9c0; }
+body { margin: 0; background: #0b1120; color: #e8eef8; }
+main { width: min(1000px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 80px; }
+h1 { font-size: 40px; margin: 0 0 8px; letter-spacing: -0.03em; }
+p.meta { color: var(--muted); margin-top: 0; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 28px 0; }
+.card { border: 1px solid var(--border); border-radius: 14px; padding: 18px; background: #111a2c; }
+.card span { display: block; color: var(--muted); font-size: 13px; }
+.card strong { display: block; margin-top: 6px; font-size: 28px; }
+section { margin-top: 34px; }
+table { width: 100%; border-collapse: collapse; border: 1px solid var(--border); }
+th, td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+th { background: #111a2c; }
+tr:last-child td, tr:last-child th { border-bottom: 0; }
+.pass { color: #6ee7b7; font-weight: 700; }
+.fail { color: #fca5a5; font-weight: 700; }
+code { color: #7dd3fc; }
+</style>
+</head>
+<body>
+<main>
+<h1>k6 smoke profile</h1>
+<p class="meta">Generated from the executed k6 summary at 2026-11-26T19:24:19.959Z · target http://127.0.0.1:8085</p>
+<div class="cards">
+  <div class="card"><span>Checks pass rate</span><strong>100.00%</strong></div>
+  <div class="card"><span>Unexpected failure rate</span><strong>0.00%</strong></div>
+  <div class="card"><span>Requests</span><strong>39</strong></div>
+  <div class="card"><span>Thresholds passed</span><strong>6/6</strong></div>
+</div>
+<section><h2>Thresholds</h2><table>
+        <thead><tr><th>Metric</th><th>Threshold</th><th>Result</th></tr></thead>
+        <tbody><tr><td>http_req_failed{expected:false}</td><td>rate==0</td><td class="pass">PASS</td></tr><tr><td>http_reqs</td><td>count&gt;0</td><td class="pass">PASS</td></tr><tr><td>http_req_duration{kind:page}</td><td>p(95)&lt;400</td><td class="pass">PASS</td></tr><tr><td>http_req_duration{kind:api}</td><td>p(95)&lt;400</td><td class="pass">PASS</td></tr><tr><td>checks_emitted</td><td>count&gt;0</td><td class="pass">PASS</td></tr><tr><td>checks</td><td>rate==1</td><td class="pass">PASS</td></tr></tbody>
+      </table></section>
+<section><h2>Metrics</h2><table><tbody><tr><th scope="row">checks</th><td colspan="2"><td>rate</td><td>1</td></tr><tr><td>passes</td><td>102</td></tr><tr><td>fails</td><td>0</td></td></tr><tr><th scope="row">checks_emitted</th><td colspan="2"><td>rate</td><td>39.24316439555291</td></tr><tr><td>count</td><td>102</td></td></tr><tr><th scope="row">http_req_failed</th><td colspan="2"><td>rate</td><td>0.07692307692307693</td></tr><tr><td>passes</td><td>3</td></tr><tr><td>fails</td><td>36</td></td></tr><tr><th scope="row">http_req_failed{expected:false}</th><td colspan="2"><td>rate</td><td>0</td></tr><tr><td>passes</td><td>0</td></tr><tr><td>fails</td><td>36</td></td></tr><tr><th scope="row">http_reqs</th><td colspan="2"><td>rate</td><td>15.004739327711407</td></tr><tr><td>count</td><td>39</td></td></tr><tr><th scope="row">http_req_duration</th><td colspan="2"><td>avg</td><td>4.605326076923078</td></tr><tr><td>min</td><td>0.184733</td></tr><tr><td>med</td><td>5.724735</td></tr><tr><td>max</td><td>9.169281</td></tr><tr><td>p(90)</td><td>8.583688800000001</td></tr><tr><td>p(95)</td><td>8.7123175</td></tr><tr><td>p(99)</td><td>9.007404799999998</td></td></tr><tr><th scope="row">iteration_duration</th><td colspan="2"><td>avg</td><td>216.5474045</td></tr><tr><td>min</td><td>215.151792</td></tr><tr><td>med</td><td>216.278908</td></tr><tr><td>max</td><td>220.138449</td></tr><tr><td>p(90)</td><td>217.1253334</td></tr><tr><td>p(95)</td><td>218.5099309</td></tr><tr><td>p(99)</td><td>219.81274538</td></td></tr></tbody></table></section>
+<section><h2>Artifacts</h2><p>Raw samples: <code>reports/smoke-raw.json</code></p><p>Machine-readable summary: <code>reports/smoke-summary.json</code></p></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "profile": "stress",
+  "generatedAt": "2026-11-26T19:24:36.917Z",
+  "baseUrl": "http://127.0.0.1:8085",
+  "metrics": {
+    "checks": {
+      "rate": 1,
+      "passes": 8040,
+      "fails": 0
+    },
+    "checks_emitted": {
+      "rate": 399.84981181539325,
+      "count": 8040
+    },
+    "http_req_failed": {
+      "rate": 0,
+      "passes": 0,
+      "fails": 3216
+    },
+    "http_req_failed{expected:false}": {
+      "rate": 0,
+      "passes": 0,
+      "fails": 3216
+    },
+    "http_reqs": {
+      "rate": 159.9399247261573,
+      "count": 3216
+    },
+    "http_req_duration": {
+      "avg": 9.87632324315919,
+      "min": 0.20479,
+      "med": 6.624988500000001,
+      "max": 27.663557,
+      "p(90)": 25.51333,
+      "p(95)": 25.79556375,
+      "p(99)": 26.225327749999998
+    },
+    "iteration_duration": {
+      "avg": 340.5434411467665,
+      "min": 337.726,
+      "med": 340.5689885,
+      "max": 344.643804,
+      "p(90)": 341.5368983,
+      "p(95)": 341.7705872,
+      "p(99)": 342.63601128
+    }
+  },
+  "thresholds": [
+    {
+      "metric": "checks",
+      "expression": "rate==1",
+      "passed": true
+    },
+    {
+      "metric": "http_req_duration{kind:page}",
+      "expression": "p(95)<900",
+      "passed": true
+    },
+    {
+      "metric": "http_req_duration{kind:page}",
+      "expression": "p(99)<1500",
+      "passed": true
+    },
+    {
+      "metric": "http_req_duration{kind:api}",
+      "expression": "p(95)<900",
+      "passed": true
+    },
+    {
+      "metric": "iteration_duration",
+      "expression": "p(95)<3500",
+      "passed": true
+    },
+    {
+      "metric": "http_req_failed{expected:false}",
+      "expression": "rate<0.02",
+      "passed": true
+    },
+    {
+      "metric": "checks_emitted",
+      "expression": "count>0",
+      "passed": true
+    },
+    {
+      "metric": "http_reqs",
+      "expression": "count>0",
+      "passed": true
+    },
+    {
+      "metric": "http_req_duration{kind:slow}",
+      "expression": "p(95)<1000",
+      "passed": true
+    }
+  ]
+}
