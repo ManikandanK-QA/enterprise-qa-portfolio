@@ -1,6 +1,6 @@
 {
   "profile": "load",
-  "generatedAt": "2026-11-26T19:24:53.088Z",
+  "generatedAt": "2026-11-26T19:27:54.749Z",
   "baseUrl": "http://127.0.0.1:8085",
   "metrics": {
     "checks": {
@@ -9,7 +9,7 @@
       "fails": 0
     },
     "checks_emitted": {
-      "rate": 144.3344879928601,
+      "rate": 144.28335222456545,
       "count": 5094
     },
     "http_req_failed": {
@@ -23,36 +23,41 @@
       "fails": 2062
     },
     "http_reqs": {
-      "rate": 58.425150027734105,
+      "rate": 58.40445078269611,
       "count": 2062
     },
     "http_req_duration": {
-      "avg": 2.893437572259942,
-      "min": 0.489539,
-      "med": 0.9288970000000001,
-      "max": 9.904457,
-      "p(90)": 8.359219399999999,
-      "p(95)": 8.4149646,
-      "p(99)": 8.71809118
+      "avg": 2.8862410848690603,
+      "min": 0.48708,
+      "med": 0.9295575,
+      "max": 9.542675,
+      "p(90)": 8.359595800000001,
+      "p(95)": 8.441431399999999,
+      "p(99)": 8.732344359999997
     },
     "iteration_duration": {
-      "avg": 511.8104306824742,
-      "min": 508.821778,
-      "med": 510.655795,
-      "max": 522.212993,
-      "p(90)": 516.1722878,
-      "p(95)": 516.5352828,
-      "p(99)": 517.19816836
+      "avg": 511.76494829690756,
+      "min": 508.774544,
+      "med": 510.60902,
+      "max": 519.46717,
+      "p(90)": 516.0761861999999,
+      "p(95)": 516.4603062,
+      "p(99)": 517.33908672
     }
   },
   "thresholds": [
     {
-      "metric": "http_reqs",
-      "expression": "count>0",
+      "metric": "checks",
+      "expression": "rate==1",
       "passed": true
     },
     {
-      "metric": "checks_emitted",
+      "metric": "http_req_duration{kind:api}",
+      "expression": "p(95)<600",
+      "passed": true
+    },
+    {
+      "metric": "http_reqs",
       "expression": "count>0",
       "passed": true
     },
@@ -62,17 +67,7 @@
       "passed": true
     },
     {
-      "metric": "checks",
-      "expression": "rate==1",
-      "passed": true
-    },
-    {
       "metric": "http_req_duration{kind:asset}",
-      "expression": "p(95)<600",
-      "passed": true
-    },
-    {
-      "metric": "http_req_duration{kind:page}",
       "expression": "p(95)<600",
       "passed": true
     },
@@ -82,8 +77,13 @@
       "passed": true
     },
     {
-      "metric": "http_req_duration{kind:api}",
+      "metric": "http_req_duration{kind:page}",
       "expression": "p(95)<600",
+      "passed": true
+    },
+    {
+      "metric": "checks_emitted",
+      "expression": "count>0",
       "passed": true
     }
   ]
